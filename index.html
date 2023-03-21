@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Conversor de Medida</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <main class="conteiner" displayflex>
+        <h1>Conversor de Medidas</h1><br>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+        <div class="row g-2">
+            <div class="col-md">
+                <div class="form-floating">
+                    <select class="form-select" id="medidas1">
+                        <option hidden>Selecione a Medida</option>
+                        <option value="Mg">Milígrama</option>
+                        <option value="g">Grama</option>
+                        <option value="Kg">Kilograma</option>
+                        <option value="t">Tonelada</option>
+                    </select>
+                    <label for="floatingSelectGrid">De:</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <select class="form-select" id="medidas2">
+                        <option hidden>Selecione a Medida</option>
+                        <option value="t">Tonelada</option>
+                        <option value="Kg">Kilograma</option>
+                        <option value="g">Grama</option>
+                        <option id="mlg" value="Mg" >Milígrama</option>
+                    </select>
+                    <label for="floatingSelectGrid">Para:</label>
+                </div>
+            </div>
+        </div><br>
+
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
+                <label for="floatingInputGrid">Insira um valor</label>
+            </div>
+        </div><br>
+
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-primary" type="button" onclick="converterMedidas()">Converter</button>
+        </div><br>
+
+        <input type="text" disabled class="form-control" id="resposta">
+    </main>
+    <script>
+        function converterMedidas() {
+            var entrada, saida;
+            var medidas1 = document.getElementById("medidas1").value;
+            var medidas2 = document.getElementById("medidas2").value;
+            switch (medidas1) {
+                case "Mg":
+                    entrada = "Mg";
+                    break;
+                case "Kg":
+                    entrada = "Kg;"
+                    break;
+                case "g":
+                    entrada = "g";
+                    break;
+                case "t":
+                    entrada = "t";
+                    break;
+            }
+            switch (medidas2) {
+                case "Mg":
+                    saida = "Mg";
+                    break;
+                case "Kg":
+                    saida = "Kg;"
+                    break;
+                case "g":
+                    saida = "g";
+                    break;
+                case "t":
+                    saida = "t";
+                    break;
+            }
+            console.log(entrada);
+            console.log(saida);
+            if(entrada=="Mg"){
+                if(saida == "Mg"){
+                    document.getElementById("resposta").value = document.getElementById("floatingInputGrid").value;
+                }
+                if(saida == "g"){
+                    document.getElementById("resposta").value = document.getElementById("floatingInputGrid").value*100;
+                }
+            }
+        }
+       
+    </script>
+</body>
+
+</html>
