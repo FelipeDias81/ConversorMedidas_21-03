@@ -56,48 +56,46 @@
         <input type="text" disabled class="form-control" id="resposta">
     </main>
     <script>
-        function converterMedidas() {
-            var entrada, saida;
-            var medidas1 = document.getElementById("medidas1").value;
-            var medidas2 = document.getElementById("medidas2").value;
-            switch (medidas1) {
-                case "Mg":
-                    entrada = "Mg";
-                    break;
-                case "Kg":
-                    entrada = "Kg;"
-                    break;
-                case "g":
-                    entrada = "g";
-                    break;
-                case "t":
-                    entrada = "t";
-                    break;
-            }
-            switch (medidas2) {
-                case "Mg":
-                    saida = "Mg";
-                    break;
-                case "Kg":
-                    saida = "Kg;"
-                    break;
-                case "g":
-                    saida = "g";
-                    break;
-                case "t":
-                    saida = "t";
-                    break;
-            }
+        var entrada = document.getElementById("medidas1").value;
+            var saida = document.getElementById("medidas2").value;
+           
             console.log(entrada);
             console.log(saida);
-            if(entrada=="Mg"){
-                if(saida == "Mg"){
-                    document.getElementById("resposta").value = document.getElementById("floatingInputGrid").value;
-                }
-                if(saida == "g"){
-                    document.getElementById("resposta").value = document.getElementById("floatingInputGrid").value*100;
-                }
+        function converterMedidas() {
+
+            var entrada = document.getElementById("medidas1").value;
+            var saida = document.getElementById("medidas2").value;
+            var input = document.getElementById("floatingInputGrid").value;
+           
+            if (entrada == 'g' && saida == 'g'){
+                resultado = saida;
             }
+            else if (entrada == 'g' && saida == 'mg'){
+                resultado = input / 100
+            }
+            else if (entrada == 'mg' && saida == 'g'){
+                resultado = input * 100
+            }
+            else {
+                resultado 
+            }
+
+            document.getElementById("resposta").value = resultado;
+
+
+
+
+
+           
+            
+            // if(entrada=="Mg"){
+            //     if(saida == "Mg"){
+            //         document.getElementById("resposta").value = document.getElementById("floatingInputGrid").value;
+            //     }
+            //     if(saida == "g"){
+            //         document.getElementById("resposta").value = document.getElementById("floatingInputGrid").value*100;
+            //     }
+            // }
         }
        
     </script>
