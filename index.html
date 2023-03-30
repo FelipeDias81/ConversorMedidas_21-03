@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,9 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
-<body class="bg-dark bg-gradient p-2 text-black">
+
+<body class="bg-dark bg-gradient p-2">
     <main class="container text-center">
-        <h1>Conversor de Medidas</h1><br><br>
+        <h1 class="fw-bold text-primary-emphasis">Conversor de Medidas</h1><br><br>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
             crossorigin="anonymous"></script>
@@ -45,13 +47,14 @@
                 <label for="floatingInputGrid">Insira um valor</label>
             </div>
         </div><br>
-        <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn bg-primary text-white" type="button" onclick="converterMedidas()">Converter</button>
+        <div class="d-grid gap-2 col-2 mx-auto">
+            <button type="button" class="fw-bold btn btn-outline-primary"
+                onclick="converterMedidas()">Converter</button>
         </div><br>
         <div class="col-md">
             <div class="form-floating">
-                <input type="number" disabled class="form-control" id="resposta">
-                <label for="floatingInputGrid">Resultado</label>
+                <input type="number" class="form-control" id="resposta" disabled>
+                <label class="fw-bold text-primary-emphasis">Resultado:</label>
             </div>
         </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </main>
@@ -60,58 +63,59 @@
             var entrada = document.getElementById("medidas1").value;
             var saida = document.getElementById("medidas2").value;
             var input = document.getElementById("floatingInputGrid").value;
-           
-            if (entrada == 'Mg' && saida == 'Mg'){
+
+            if (entrada == 'Mg' && saida == 'Mg') {
                 resultado = input;
             }
-            else if (entrada == 'Mg' && saida == 'g'){
+            else if (entrada == 'Mg' && saida == 'g') {
                 resultado = input / 1000;
             }
-            else if (entrada == 'Mg' && saida == 'Kg'){
+            else if (entrada == 'Mg' && saida == 'Kg') {
                 resultado = input / 1000000;
             }
-            else if (entrada == 'Mg' && saida == 't'){
+            else if (entrada == 'Mg' && saida == 't') {
                 resultado = input / 10000000;
             }
-            else if (entrada == 'g' && saida == 'Mg'){
+            else if (entrada == 'g' && saida == 'Mg') {
                 resultado = input * 1000;
             }
-            else if (entrada == 'g' && saida == 'g'){
+            else if (entrada == 'g' && saida == 'g') {
                 resultado = input;
             }
-            else if (entrada == 'g' && saida == 'Kg'){
+            else if (entrada == 'g' && saida == 'Kg') {
                 resultado = input / 1000;
             }
-            else if (entrada == 'g' && saida == 't'){
+            else if (entrada == 'g' && saida == 't') {
                 resultado = input / 10000;
             }
-            else if (entrada == 'Kg' && saida == 'Mg'){
+            else if (entrada == 'Kg' && saida == 'Mg') {
                 resultado = input * 1000000;
             }
-            else if (entrada == 'Kg' && saida == 'g'){
+            else if (entrada == 'Kg' && saida == 'g') {
                 resultado = input * 1000;
             }
-            else if (entrada == 'Kg' && saida == 'Kg'){
+            else if (entrada == 'Kg' && saida == 'Kg') {
                 resultado = input;
             }
-            else if (entrada == 'Kg' && saida == 't'){
+            else if (entrada == 'Kg' && saida == 't') {
                 resultado = input / 10;
             }
-            else if (entrada == 't' && saida == 'Mg'){
+            else if (entrada == 't' && saida == 'Mg') {
                 resultado = input * 10000000;
             }
-            else if (entrada == 't' && saida == 'g'){
+            else if (entrada == 't' && saida == 'g') {
                 resultado = input * 10000;
             }
-            else if (entrada == 't' && saida == 'Kg'){
+            else if (entrada == 't' && saida == 'Kg') {
                 resultado = input * 10;
             }
             else {
-                resultado = input; 
+                resultado = input;
             }
 
-            document.getElementById("resposta").value = resultado; 
+            document.getElementById("resposta").value = resultado;
         }
     </script>
 </body>
+
 </html>
